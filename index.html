@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>朝陽 - ASAHI - 建築・空間意匠</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,12 +29,13 @@
       font-family: 'Zen Old Mincho', 'Shippori Mincho', serif;
       background-color: var(--washi-bg);
       color: var(--deep-sumi);
-      line-height: 1.9;
+      line-height: 1.8;
       letter-spacing: 0.04em;
       background-image: 
         radial-gradient(#ebe3d5 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255,255,255,0.6), rgba(248, 245, 238, 0.95));
       background-size: 20px 20px, 100% 100%;
+      word-break: break-word;
     }
 
     h1, h2, h3, h4, .mincho {
@@ -45,7 +46,7 @@
     .container {
       max-width: 1040px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 20px;
     }
 
     /* ヘッダー */
@@ -61,28 +62,28 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 76px;
+      height: 70px;
     }
     .brand-logo {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       cursor: pointer;
       text-decoration: none;
     }
     .logo-title {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       font-weight: 800;
       color: var(--deep-sumi);
       letter-spacing: 0.2em;
       line-height: 1;
     }
     .logo-sub {
-      font-size: 0.68rem;
-      letter-spacing: 0.4em;
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
       color: var(--gold);
       display: block;
-      margin-top: 4px;
+      margin-top: 3px;
     }
 
     /* メニュー */
@@ -94,8 +95,8 @@
       border: 1px solid var(--border-wood);
       font-size: 24px;
       cursor: pointer;
-      width: 46px;
-      height: 46px;
+      width: 44px;
+      height: 44px;
       border-radius: 4px;
       display: flex;
       align-items: center;
@@ -111,12 +112,12 @@
       display: none;
       position: absolute;
       right: 0;
-      top: 56px;
+      top: 52px;
       background: #fff;
       border: 1px solid var(--border-wood);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       border-radius: 4px;
-      width: 240px;
+      width: 230px;
       z-index: 600;
       overflow: hidden;
     }
@@ -125,11 +126,11 @@
     }
     .menu-dropdown a {
       display: block;
-      padding: 16px 22px;
+      padding: 14px 18px;
       color: var(--deep-sumi);
       text-decoration: none;
       border-bottom: 1px solid #f3ede2;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       position: relative;
       transition: all 0.2s;
     }
@@ -139,62 +140,57 @@
     .menu-dropdown a:hover {
       background: #faf7f2;
       color: var(--primary-red);
-      padding-left: 26px;
-    }
-    .menu-dropdown a:hover::before {
-      content: "―";
-      position: absolute;
-      left: 10px;
-      color: var(--primary-red);
+      padding-left: 22px;
     }
 
     /* ページセクション */
     .page-section {
       display: none;
       animation: fadeIn 0.35s ease-in-out;
-      padding: 50px 0 90px;
+      padding: 40px 0 80px;
     }
     .page-section.active {
       display: block;
     }
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(8px); }
+      from { opacity: 0; transform: translateY(6px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
     /* 和風見出し */
     .sec-title-wrap {
       text-align: center;
-      margin-bottom: 44px;
+      margin-bottom: 36px;
       position: relative;
     }
     .sec-sub {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       letter-spacing: 0.3em;
       color: var(--gold);
       font-weight: 700;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .sec-title {
-      font-size: 2.2rem;
+      font-size: 2rem;
       color: var(--deep-sumi);
       position: relative;
       display: inline-block;
-      padding: 0 20px;
+      padding: 0 16px;
+      line-height: 1.3;
     }
     .sec-title::before, .sec-title::after {
       content: "❖";
       font-size: 0.8rem;
       color: var(--primary-red);
       vertical-align: middle;
-      margin: 0 10px;
+      margin: 0 8px;
     }
 
     .washi-decorated {
-      padding: 36px;
+      padding: 32px;
       border: 1px solid #d4c8b6;
       outline: 4px solid rgba(212, 200, 182, 0.25);
-      outline-offset: -10px;
+      outline-offset: -8px;
       background-color: rgba(255, 255, 255, 0.9);
       border-radius: 4px;
     }
@@ -202,10 +198,10 @@
     .placeholder-banner {
       border: 1px dashed #b5a999;
       background: rgba(243, 237, 227, 0.5);
-      padding: 30px;
+      padding: 24px;
       text-align: center;
       color: #7a7065;
-      margin-bottom: 30px;
+      margin-bottom: 24px;
       border-radius: 4px;
     }
     .image-placeholder {
@@ -216,7 +212,7 @@
       align-items: center;
       justify-content: center;
       color: #796e62;
-      padding: 24px;
+      padding: 20px;
       text-align: center;
       min-height: 180px;
       border-radius: 4px;
@@ -226,11 +222,11 @@
     .hero-zen {
       display: flex;
       flex-wrap: wrap;
-      gap: 32px;
+      gap: 28px;
       background: #fff;
       border: 1px solid var(--border-wood);
-      padding: 36px;
-      margin-bottom: 50px;
+      padding: 32px;
+      margin-bottom: 40px;
       border-radius: 4px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.03);
     }
@@ -240,12 +236,12 @@
       letter-spacing: 0.25em;
       min-height: 320px;
       border-left: 1px solid #f0ebe1;
-      padding-left: 24px;
+      padding-left: 20px;
       display: flex;
       justify-content: flex-start;
     }
     .hero-vertical-copy h2 {
-      font-size: 1.85rem;
+      font-size: 1.8rem;
       color: var(--deep-sumi);
       margin-bottom: 14px;
       border-right: 3px solid var(--primary-red);
@@ -259,73 +255,65 @@
     }
     .hero-img-box {
       flex: 1;
-      min-width: 300px;
+      min-width: 280px;
       position: relative;
       overflow: hidden;
       border-radius: 4px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
     /* グリッドカード */
     .grid-3 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
     }
     .washi-card {
       background: #fff;
       border: 1px solid var(--border-wood);
-      padding: 24px;
+      padding: 22px;
       border-radius: 4px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    .washi-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-    }
 
     /* 資材ページスタイル */
     .material-category {
-      margin-bottom: 40px;
+      margin-bottom: 36px;
       background: #fff;
       border: 1px solid var(--border-wood);
       border-radius: 6px;
-      padding: 30px;
+      padding: 24px;
       box-shadow: 0 4px 14px rgba(0,0,0,0.02);
     }
     .category-header {
       border-bottom: 2px solid var(--primary-red);
-      padding-bottom: 10px;
-      margin-bottom: 20px;
+      padding-bottom: 8px;
+      margin-bottom: 18px;
       display: flex;
       align-items: baseline;
       gap: 12px;
     }
     .category-title {
-      font-size: 1.45rem;
+      font-size: 1.35rem;
       color: var(--deep-sumi);
     }
     .category-note {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--text-sub);
     }
     .material-item {
       border: 1px solid #ede4d5;
       background: #faf8f4;
       border-radius: 6px;
-      padding: 20px 24px;
+      padding: 18px 20px;
       margin-bottom: 16px;
       transition: background 0.2s;
     }
     .material-item:last-child {
       margin-bottom: 0;
-    }
-    .material-item:hover {
-      background: #fdfbf7;
-      border-color: #dfd2be;
     }
     .mat-header {
       display: flex;
@@ -333,23 +321,23 @@
       justify-content: space-between;
       align-items: baseline;
       gap: 10px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       border-bottom: 1px dashed #e8dfd3;
       padding-bottom: 10px;
     }
     .mat-name {
-      font-size: 1.25rem;
+      font-size: 1.18rem;
       color: var(--deep-sumi);
       font-weight: 700;
     }
     .mat-price-tag {
       font-family: 'Shippori Mincho', serif;
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 700;
       color: var(--primary-red);
     }
     .mat-price-tax-ex {
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       color: #777;
       font-weight: normal;
       margin-left: 4px;
@@ -357,9 +345,9 @@
     .mat-badge-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
       margin-bottom: 10px;
-      font-size: 0.88rem;
+      font-size: 0.85rem;
     }
     .mat-grade-badge {
       background: #eee4d5;
@@ -377,9 +365,9 @@
       font-size: 0.75rem;
     }
     .mat-desc {
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       color: var(--charcoal);
-      line-height: 1.85;
+      line-height: 1.8;
     }
 
     /* 工賃＆施工プラン */
@@ -387,8 +375,8 @@
       background: #fff;
       border: 1px solid var(--border-wood);
       border-radius: 4px;
-      padding: 30px;
-      margin-bottom: 36px;
+      padding: 26px;
+      margin-bottom: 30px;
       box-shadow: 0 4px 14px rgba(0,0,0,0.02);
     }
     .plan-header {
@@ -398,10 +386,11 @@
       align-items: baseline;
       border-bottom: 2px solid #ede5d7;
       padding-bottom: 12px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
+      gap: 10px;
     }
     .plan-title {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       color: var(--deep-sumi);
       position: relative;
       padding-left: 14px;
@@ -417,7 +406,7 @@
     }
     .plan-cost {
       font-family: 'Shippori Mincho', serif;
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       font-weight: 700;
       color: var(--primary-red);
     }
@@ -425,41 +414,54 @@
       background: #faf8f4;
       border: 1px solid #eae3d7;
       border-radius: 4px;
-      padding: 22px;
-      margin-top: 18px;
+      padding: 18px;
+      margin-top: 16px;
+    }
+    .case-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: center;
+    }
+    .case-img-wrap {
+      flex: 1;
+      min-width: 240px;
+    }
+    .case-desc-wrap {
+      flex: 2;
+      min-width: 260px;
+      font-size: 0.88rem;
+      color: var(--text-sub);
     }
 
     /* フォーム・シミュレーター */
     .calc-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin-bottom: 24px;
-    }
-    @media (max-width: 768px) {
-      .calc-row { grid-template-columns: 1fr; }
-      .hero-vertical-copy { writing-mode: horizontal-tb; border-left: none; padding-left: 0; min-height: auto; }
+      gap: 18px;
+      margin-bottom: 20px;
     }
     .form-group {
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
     .form-label {
       display: block;
       font-weight: 700;
-      font-size: 0.95rem;
-      margin-bottom: 8px;
+      font-size: 0.92rem;
+      margin-bottom: 6px;
       color: var(--deep-sumi);
     }
     .form-control {
       width: 100%;
-      padding: 14px 16px;
+      padding: 12px 14px;
       border: 1px solid var(--border-wood);
       border-radius: 4px;
-      font-size: 1rem;
+      font-size: 0.95rem;
       background: #fff;
       font-family: inherit;
       color: var(--deep-sumi);
       outline: none;
+      -webkit-appearance: none;
     }
     .form-control:focus {
       border-color: var(--primary-red);
@@ -474,7 +476,6 @@
       font-weight: normal;
       color: var(--deep-sumi);
       background: #fff;
-      padding: 6px 10px;
     }
 
     .input-unit-wrap {
@@ -483,11 +484,11 @@
       align-items: center;
     }
     .input-unit-wrap input {
-      padding-right: 42px;
+      padding-right: 38px;
     }
     .input-unit-wrap .unit {
       position: absolute;
-      right: 16px;
+      right: 14px;
       color: var(--text-sub);
       font-weight: 700;
     }
@@ -496,69 +497,184 @@
       background-color: #faf5ee;
       border: 2px solid #dfcfb9;
       border-radius: 4px;
-      padding: 24px 20px;
+      padding: 20px 16px;
       text-align: center;
-      margin: 24px 0;
+      margin: 20px 0;
     }
     .result-total {
       font-family: 'Shippori Mincho', serif;
-      font-size: 2.6rem;
+      font-size: 2.4rem;
       font-weight: 800;
       color: var(--primary-red);
       letter-spacing: 0.05em;
     }
 
-    /* 注意書きスタイル */
     .caution-box {
       background: #fff;
       border: 1px solid #dfd2c0;
       border-left: 4px solid var(--primary-red);
       border-radius: 4px;
-      padding: 16px 20px;
-      margin-bottom: 24px;
-      font-size: 0.88rem;
+      padding: 16px;
+      margin-bottom: 20px;
+      font-size: 0.85rem;
       color: var(--text-sub);
-      line-height: 1.8;
-      text-align: left;
+      line-height: 1.7;
     }
     .caution-box strong {
       color: var(--deep-sumi);
       display: block;
       margin-bottom: 4px;
-      font-size: 0.92rem;
     }
 
     .floating-contact-btn {
       position: fixed;
-      right: 24px;
-      bottom: 24px;
+      right: 18px;
+      bottom: 18px;
       background: var(--primary-red);
       color: #fff;
       border: 1px solid rgba(255,255,255,0.3);
-      padding: 14px 26px;
-      border-radius: 4px;
-      font-size: 0.95rem;
+      padding: 12px 20px;
+      border-radius: 40px;
+      font-size: 0.92rem;
       font-family: 'Shippori Mincho', serif;
       font-weight: 700;
       cursor: pointer;
-      box-shadow: 0 6px 20px rgba(166, 28, 36, 0.45);
+      box-shadow: 0 6px 18px rgba(166, 28, 36, 0.4);
       z-index: 800;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       transition: all 0.2s;
-    }
-    .floating-contact-btn:hover {
-      background: #8b131a;
-      transform: translateY(-2px);
     }
 
     .contact-banner {
       background: #f1ebdE;
       border: 1px solid var(--border-wood);
-      padding: 32px;
+      padding: 26px 20px;
       border-radius: 4px;
-      margin-top: 50px;
+      margin-top: 40px;
+    }
+
+    /* ==========================================================================
+       ▼ スマホ対応メディアクエリ (画面幅 768px 以下で自動最適化)
+       ========================================================================== */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 14px;
+      }
+
+      .sec-title {
+        font-size: 1.6rem;
+        padding: 0 8px;
+      }
+      .sec-title::before, .sec-title::after {
+        font-size: 0.7rem;
+        margin: 0 4px;
+      }
+
+      /* ヒーローエリア：縦書きをやめ、スマホで見やすい縦並びに */
+      .hero-zen {
+        padding: 20px 16px;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .hero-vertical-copy {
+        writing-mode: horizontal-tb;
+        border-left: none;
+        padding-left: 0;
+        min-height: auto;
+      }
+      .hero-vertical-copy h2 {
+        font-size: 1.5rem;
+        border-right: none;
+        border-left: 4px solid var(--primary-red);
+        padding-left: 10px;
+        padding-right: 0;
+        margin-bottom: 10px;
+      }
+      .hero-vertical-copy p {
+        font-size: 0.9rem;
+        line-height: 1.8;
+      }
+      .hero-img-box {
+        min-width: 100%;
+      }
+
+      .washi-decorated {
+        padding: 20px 14px;
+        outline: none; /* スマホでは枠の被りを防ぐためアウトラインを消す */
+      }
+
+      /* 資材・プランカードの調整 */
+      .material-category {
+        padding: 16px 12px;
+      }
+      .category-header {
+        flex-direction: column;
+        gap: 4px;
+      }
+      .category-title {
+        font-size: 1.2rem;
+      }
+      .mat-header {
+        flex-direction: column;
+        gap: 6px;
+      }
+      .mat-name {
+        font-size: 1.05rem;
+      }
+      .mat-price-tag {
+        font-size: 1.25rem;
+      }
+      .material-item {
+        padding: 16px 14px;
+      }
+
+      .plan-card {
+        padding: 18px 14px;
+      }
+      .plan-header {
+        flex-direction: column;
+        gap: 6px;
+      }
+      .plan-title {
+        font-size: 1.2rem;
+      }
+      .plan-cost {
+        font-size: 1.3rem;
+      }
+      .case-flex {
+        flex-direction: column;
+      }
+      .case-img-wrap, .case-desc-wrap {
+        min-width: 100%;
+      }
+
+      /* シミュレーション：2列を1列へ */
+      .calc-row {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .result-total {
+        font-size: 1.9rem;
+      }
+
+      /* フッター情報 */
+      .contact-banner {
+        padding: 20px 14px;
+      }
+      .contact-banner > div:last-of-type {
+        flex-direction: column;
+        gap: 16px !important;
+      }
+
+      /* フローティングボタンを少しスリムに */
+      .floating-contact-btn {
+        right: 12px;
+        bottom: 12px;
+        padding: 10px 16px;
+        font-size: 0.85rem;
+      }
     }
   </style>
 </head>
@@ -603,10 +719,10 @@
           </p>
         </div>
         <div class="hero-img-box">
-          <div class="image-placeholder" style="height: 100%; min-height: 320px;">
+          <div class="image-placeholder" style="height: 100%; min-height: 240px;">
             <span style="font-size: 2rem;">🪵</span>
             <strong>【メイン写真 掲載枠】</strong>
-            <p style="font-size: 0.85rem; margin-top: 8px;">吉野桧・無垢材の空間写真を掲載可能</p>
+            <p style="font-size: 0.85rem; margin-top: 6px;">吉野桧・無垢材の空間写真を掲載可能</p>
           </div>
         </div>
       </div>
@@ -616,24 +732,24 @@
         <div class="sec-sub">OUR PHILOSOPHY</div>
         <h2 class="sec-title">朝陽の強み</h2>
       </div>
-      <div class="washi-decorated" style="margin-bottom: 50px;">
+      <div class="washi-decorated" style="margin-bottom: 40px;">
         <div class="placeholder-banner">
-          <h3 style="color: var(--deep-sumi); margin-bottom: 8px;">【自社の強み・こだわり 掲載エリア】</h3>
-          <p style="font-size: 0.9rem;">「現地調査無料」「産地直送の厳選吉野桧」「熟練職人の自社施工」などの強みを後から追記・編集可能です</p>
+          <h3 style="color: var(--deep-sumi); margin-bottom: 8px; font-size: 1.15rem;">【自社の強み・こだわり 掲載エリア】</h3>
+          <p style="font-size: 0.88rem;">「現地調査無料」「産地直送の厳選吉野桧」「熟練職人の自社施工」などの強みを後から追記・編集可能です</p>
         </div>
         <div class="grid-3">
           <div style="text-align: center; padding: 10px;">
-            <div style="font-size: 1.5rem; color: var(--primary-red); margin-bottom: 6px;">壱</div>
+            <div style="font-size: 1.4rem; color: var(--primary-red); margin-bottom: 4px;">壱</div>
             <h4>【強み項目 1】</h4>
             <p style="font-size: 0.85rem; color: var(--text-sub); margin-top: 4px;">最高峰・奈良県産吉野桧の調達力</p>
           </div>
           <div style="text-align: center; padding: 10px;">
-            <div style="font-size: 1.5rem; color: var(--primary-red); margin-bottom: 6px;">弐</div>
+            <div style="font-size: 1.4rem; color: var(--primary-red); margin-bottom: 4px;">弐</div>
             <h4>【強み項目 2】</h4>
             <p style="font-size: 0.85rem; color: var(--text-sub); margin-top: 4px;">適材適所の木材選定と丁寧な仕上げ</p>
           </div>
           <div style="text-align: center; padding: 10px;">
-            <div style="font-size: 1.5rem; color: var(--primary-red); margin-bottom: 6px;">参</div>
+            <div style="font-size: 1.4rem; color: var(--primary-red); margin-bottom: 4px;">参</div>
             <h4>【強み項目 3】</h4>
             <p style="font-size: 0.85rem; color: var(--text-sub); margin-top: 4px;">現地調査（無料）から安心の明朗会計</p>
           </div>
@@ -647,30 +763,30 @@
       </div>
       <div class="grid-3">
         <div class="washi-card" onclick="navigateTo('page-materials')" style="cursor: pointer;">
-          <div class="image-placeholder" style="height: 140px;"><span>🪵</span>【吉野桧 資材写真】</div>
-          <div style="margin-top: 16px;">
-            <h3 style="font-size: 1.15rem;">厳選 桧建材一覧</h3>
+          <div class="image-placeholder" style="height: 130px;"><span>🪵</span>【吉野桧 資材写真】</div>
+          <div style="margin-top: 14px;">
+            <h3 style="font-size: 1.12rem;">厳選 桧建材一覧</h3>
             <p style="font-size: 0.85rem; color: var(--text-sub); margin-top: 6px;">吉野桧フローリング・パネリング・床暖房対応材の平米単価と特徴一覧をご覧いただけます。</p>
           </div>
-          <span style="color: var(--primary-red); font-weight: bold; font-size: 0.9rem; margin-top: 12px; display: inline-block;">資材詳細を見る →</span>
+          <span style="color: var(--primary-red); font-weight: bold; font-size: 0.88rem; margin-top: 10px; display: inline-block;">資材詳細を見る →</span>
         </div>
 
         <div class="washi-card" onclick="navigateTo('page-labor')" style="cursor: pointer;">
-          <div class="image-placeholder" style="height: 140px;"><span>🔨</span>【施工事例 写真枠】</div>
-          <div style="margin-top: 16px;">
-            <h3 style="font-size: 1.15rem;">工賃プラン・施工事例</h3>
+          <div class="image-placeholder" style="height: 130px;"><span>🔨</span>【施工事例 写真枠】</div>
+          <div style="margin-top: 14px;">
+            <h3 style="font-size: 1.12rem;">工賃プラン・施工事例</h3>
             <p style="font-size: 0.85rem; color: var(--text-sub); margin-top: 6px;">リフォームから新築まで、プランごとの坪単価目安と施工実績を掲載しています。</p>
           </div>
-          <span style="color: var(--primary-red); font-weight: bold; font-size: 0.9rem; margin-top: 12px; display: inline-block;">工賃・事例を見る →</span>
+          <span style="color: var(--primary-red); font-weight: bold; font-size: 0.88rem; margin-top: 10px; display: inline-block;">工賃・事例を見る →</span>
         </div>
 
         <div class="washi-card" onclick="navigateTo('page-estimate')" style="cursor: pointer;">
-          <div class="image-placeholder" style="height: 140px;"><span>📐</span>【計算 写真枠】</div>
-          <div style="margin-top: 16px;">
-            <h3 style="font-size: 1.15rem;">概算お見積り計算</h3>
+          <div class="image-placeholder" style="height: 130px;"><span>📐</span>【計算 写真枠】</div>
+          <div style="margin-top: 14px;">
+            <h3 style="font-size: 1.12rem;">概算お見積り計算</h3>
             <p style="font-size: 0.85rem; color: var(--text-sub); margin-top: 6px;">広さ（坪/㎡）と厳選資材・施工プランを選ぶだけで概算費用を自動算出します。</p>
           </div>
-          <span style="color: var(--primary-red); font-weight: bold; font-size: 0.9rem; margin-top: 12px; display: inline-block;">シミュレーションする →</span>
+          <span style="color: var(--primary-red); font-weight: bold; font-size: 0.88rem; margin-top: 10px; display: inline-block;">シミュレーションする →</span>
         </div>
       </div>
 
@@ -683,7 +799,7 @@
       <div class="sec-title-wrap">
         <div class="sec-sub">MATERIALS</div>
         <h2 class="sec-title">取り扱い木材・資材一覧</h2>
-        <p style="color: var(--text-sub); margin-top: 8px;">奈良県産「吉野桧」をはじめ、格調高い空間を創る銘木建材の平米単価・グレード・特徴</p>
+        <p style="color: var(--text-sub); margin-top: 6px; font-size: 0.9rem;">奈良県産「吉野桧」をはじめ、格調高い空間を創る銘木建材の平米単価・グレード・特徴</p>
       </div>
 
       <!-- 1. 吉野桧（床用フローリング） -->
@@ -697,7 +813,7 @@
           <div class="mat-header">
             <span class="mat-name">吉野桧 一枚もの通常品フローリング</span>
             <div>
-              <span class="mat-price-tag">¥9,339 / ㎡ <span style="font-size:0.85rem; color:#666;">(税込)</span></span>
+              <span class="mat-price-tag">¥9,339 / ㎡ <span style="font-size:0.8rem; color:#666;">(税込)</span></span>
               <span class="mat-price-tax-ex">［税別：¥8,490/㎡］</span>
             </div>
           </div>
@@ -714,7 +830,7 @@
           <div class="mat-header">
             <span class="mat-name">吉野桧 一枚もの上小節フローリング</span>
             <div>
-              <span class="mat-price-tag">¥11,550 / ㎡ <span style="font-size:0.85rem; color:#666;">(税込)</span></span>
+              <span class="mat-price-tag">¥11,550 / ㎡ <span style="font-size:0.8rem; color:#666;">(税込)</span></span>
               <span class="mat-price-tax-ex">［税別：¥10,500/㎡］</span>
             </div>
           </div>
@@ -731,7 +847,7 @@
           <div class="mat-header">
             <span class="mat-name">吉野桧 一枚もの無節フローリング</span>
             <div>
-              <span class="mat-price-tag">¥18,480 / ㎡ <span style="font-size:0.85rem; color:#666;">(税込)</span></span>
+              <span class="mat-price-tag">¥18,480 / ㎡ <span style="font-size:0.8rem; color:#666;">(税込)</span></span>
               <span class="mat-price-tax-ex">［税別：¥16,800/㎡］</span>
             </div>
           </div>
@@ -756,7 +872,7 @@
           <div class="mat-header">
             <span class="mat-name">吉野桧 パネリング通常品</span>
             <div>
-              <span class="mat-price-tag">¥7,480 / ㎡ <span style="font-size:0.85rem; color:#666;">(税込)</span></span>
+              <span class="mat-price-tag">¥7,480 / ㎡ <span style="font-size:0.8rem; color:#666;">(税込)</span></span>
               <span class="mat-price-tax-ex">［税別：¥6,800/㎡］</span>
             </div>
           </div>
@@ -773,7 +889,7 @@
           <div class="mat-header">
             <span class="mat-name">吉野桧 パネリング上小節</span>
             <div>
-              <span class="mat-price-tag">¥9,900 / ㎡ <span style="font-size:0.85rem; color:#666;">(税込)</span></span>
+              <span class="mat-price-tag">¥9,900 / ㎡ <span style="font-size:0.8rem; color:#666;">(税込)</span></span>
               <span class="mat-price-tax-ex">［税別：¥9,000/㎡］</span>
             </div>
           </div>
@@ -790,7 +906,7 @@
           <div class="mat-header">
             <span class="mat-name">吉野桧 パネリング無節</span>
             <div>
-              <span class="mat-price-tag">¥16,500 / ㎡ <span style="font-size:0.85rem; color:#666;">(税込)</span></span>
+              <span class="mat-price-tag">¥16,500 / ㎡ <span style="font-size:0.8rem; color:#666;">(税込)</span></span>
               <span class="mat-price-tax-ex">［税別：¥15,000/㎡］</span>
             </div>
           </div>
@@ -815,7 +931,7 @@
           <div class="mat-header">
             <span class="mat-name">吉野桧 一枚もの（床暖房兼用）通常品フローリング</span>
             <div>
-              <span class="mat-price-tag">¥10,989 / ㎡ <span style="font-size:0.85rem; color:#666;">(税込)</span></span>
+              <span class="mat-price-tag">¥10,989 / ㎡ <span style="font-size:0.8rem; color:#666;">(税込)</span></span>
               <span class="mat-price-tax-ex">［税別：¥9,990/㎡］</span>
             </div>
           </div>
@@ -832,7 +948,7 @@
           <div class="mat-header">
             <span class="mat-name">吉野桧 一枚もの（床暖房兼用）上小節フローリング</span>
             <div>
-              <span class="mat-price-tag">¥15,950 / ㎡ <span style="font-size:0.85rem; color:#666;">(税込)</span></span>
+              <span class="mat-price-tag">¥15,950 / ㎡ <span style="font-size:0.8rem; color:#666;">(税込)</span></span>
               <span class="mat-price-tax-ex">［税別：¥14,500/㎡］</span>
             </div>
           </div>
@@ -857,7 +973,7 @@
           <div class="mat-header">
             <span class="mat-name">国産桧 一枚もの通常品フローリング</span>
             <div>
-              <span class="mat-price-tag">¥6,930 / ㎡ <span style="font-size:0.85rem; color:#666;">(税込)</span></span>
+              <span class="mat-price-tag">¥6,930 / ㎡ <span style="font-size:0.8rem; color:#666;">(税込)</span></span>
               <span class="mat-price-tax-ex">［税別：¥6,300/㎡］</span>
             </div>
           </div>
@@ -874,7 +990,7 @@
           <div class="mat-header">
             <span class="mat-name">国産桧 一枚もの上小節フローリング</span>
             <div>
-              <span class="mat-price-tag">¥11,880 / ㎡ <span style="font-size:0.85rem; color:#666;">(税込)</span></span>
+              <span class="mat-price-tag">¥11,880 / ㎡ <span style="font-size:0.8rem; color:#666;">(税込)</span></span>
               <span class="mat-price-tax-ex">［税別：¥10,800/㎡］</span>
             </div>
           </div>
@@ -891,7 +1007,7 @@
           <div class="mat-header">
             <span class="mat-name">国産桧 一枚もの無節フローリング</span>
             <div>
-              <span class="mat-price-tag">¥14,190 / ㎡ <span style="font-size:0.85rem; color:#666;">(税込)</span></span>
+              <span class="mat-price-tag">¥14,190 / ㎡ <span style="font-size:0.8rem; color:#666;">(税込)</span></span>
               <span class="mat-price-tax-ex">［税別：¥12,900/㎡］</span>
             </div>
           </div>
@@ -905,8 +1021,8 @@
         </div>
       </div>
 
-      <div style="text-align: center; margin-top: 50px;">
-        <button class="form-control" style="width: auto; padding: 12px 36px; background: #fff; cursor: pointer;" onclick="navigateTo('page-home')">← トップページへ戻る</button>
+      <div style="text-align: center; margin-top: 40px;">
+        <button class="form-control" style="width: auto; padding: 12px 30px; background: #fff; cursor: pointer;" onclick="navigateTo('page-home')">← トップページへ戻る</button>
       </div>
     </div>
   </main>
@@ -917,7 +1033,7 @@
       <div class="sec-title-wrap">
         <div class="sec-sub">PLAN & WORKS</div>
         <h2 class="sec-title">工賃プラン・施工事例</h2>
-        <p style="color: var(--text-sub); margin-top: 8px;">各施工プランの内容、工賃の目安、および実際の施工事例です</p>
+        <p style="color: var(--text-sub); margin-top: 6px; font-size: 0.9rem;">各施工プランの内容、工賃の目安、および実際の施工事例です</p>
       </div>
 
       <!-- プラン 1 -->
@@ -926,24 +1042,23 @@
           <h3 class="plan-title">部分改修・内外装リフォームプラン</h3>
           <div class="plan-cost">坪工賃目安：¥40,000〜</div>
         </div>
-        <p style="color: var(--text-sub); font-size: 0.95rem; margin-bottom: 16px;">
+        <p style="color: var(--text-sub); font-size: 0.92rem; margin-bottom: 14px;">
           玄関まわり、和室のフローリング張り替え、壁面パネリング新設など、部分的な改修を行うプランです。（工期目安：約1〜2週間）
         </p>
 
-        <!-- 事例 1 -->
         <div class="plan-case-block">
-          <h4 style="font-size: 1rem; color: var(--deep-sumi); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-            <span style="background: var(--primary-red); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 2px;">施工事例</span>
+          <h4 style="font-size: 0.95rem; color: var(--deep-sumi); margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+            <span style="background: var(--primary-red); color: #fff; font-size: 0.75rem; padding: 2px 6px; border-radius: 2px;">施工事例</span>
             中央区 銀座ギャラリー様 和空間・円窓意匠改修
           </h4>
-          <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
-            <div class="image-placeholder" style="flex: 1; min-width: 240px; height: 160px;">
-              <span>📷</span>【円窓・床の間 事例写真】
+          <div class="case-flex">
+            <div class="case-img-wrap">
+              <div class="image-placeholder" style="height: 150px;"><span>📷</span>【円窓・床の間 事例写真】</div>
             </div>
-            <div style="flex: 2; min-width: 260px; font-size: 0.9rem; color: var(--text-sub);">
+            <div class="case-desc-wrap">
               <p><strong>施工内容：</strong>吉野桧パネリング壁の造作、丸窓格子細工、珪藻土塗り壁施工</p>
-              <p style="margin-top: 6px;"><strong>規模：</strong>約12坪 ／ <strong>工期：</strong>約10日間</p>
-              <p style="margin-top: 6px;">「光と影の陰影を計算した吉野桧の壁面により、静けさと品格が漂う空間を創出しました。」</p>
+              <p style="margin-top: 4px;"><strong>規模：</strong>約12坪 ／ <strong>工期：</strong>約10日間</p>
+              <p style="margin-top: 4px;">「光と影の陰影を計算した吉野桧の壁面により、静けさと品格が漂う空間を創出しました。」</p>
             </div>
           </div>
         </div>
@@ -955,24 +1070,23 @@
           <h3 class="plan-title">住宅全面リノベーションプラン</h3>
           <div class="plan-cost">坪工賃目安：¥75,000〜</div>
         </div>
-        <p style="color: var(--text-sub); font-size: 0.95rem; margin-bottom: 16px;">
+        <p style="color: var(--text-sub); font-size: 0.92rem; margin-bottom: 14px;">
           既存の骨組みを活かしながら間取りを再編し、床一面に吉野桧無垢材を採用する全面改修プラン。（工期目安：約1〜2ヶ月）
         </p>
 
-        <!-- 事例 2 -->
         <div class="plan-case-block">
-          <h4 style="font-size: 1rem; color: var(--deep-sumi); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-            <span style="background: var(--primary-red); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 2px;">施工事例</span>
+          <h4 style="font-size: 0.95rem; color: var(--deep-sumi); margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+            <span style="background: var(--primary-red); color: #fff; font-size: 0.75rem; padding: 2px 6px; border-radius: 2px;">施工事例</span>
             都内 S様邸 和モダン全面改装
           </h4>
-          <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
-            <div class="image-placeholder" style="flex: 1; min-width: 240px; height: 160px;">
-              <span>📷</span>【吉野桧フローリング リビング写真】
+          <div class="case-flex">
+            <div class="case-img-wrap">
+              <div class="image-placeholder" style="height: 150px;"><span>📷</span>【吉野桧フローリング リビング写真】</div>
             </div>
-            <div style="flex: 2; min-width: 260px; font-size: 0.9rem; color: var(--text-sub);">
+            <div class="case-desc-wrap">
               <p><strong>施工内容：</strong>LDK全面に吉野桧一枚ものフローリング敷設、特注組子格子の建具設置</p>
-              <p style="margin-top: 6px;"><strong>規模：</strong>約30坪 ／ <strong>工期：</strong>1.5ヶ月</p>
-              <p style="margin-top: 6px;">「素足で歩く心地よさと桧の芳香に包まれ、家族全員が深く寛げる空間へと刷新しました。」</p>
+              <p style="margin-top: 4px;"><strong>規模：</strong>約30坪 ／ <strong>工期：</strong>1.5ヶ月</p>
+              <p style="margin-top: 4px;">「素足で歩く心地よさと桧の芳香に包まれ、家族全員が深く寛げる空間へと刷新しました。」</p>
             </div>
           </div>
         </div>
@@ -984,31 +1098,30 @@
           <h3 class="plan-title">床暖房兼用・大規模伝統建築プラン</h3>
           <div class="plan-cost">坪工賃目安：¥120,000〜</div>
         </div>
-        <p style="color: var(--text-sub); font-size: 0.95rem; margin-bottom: 16px;">
+        <p style="color: var(--text-sub); font-size: 0.92rem; margin-bottom: 14px;">
           床暖房対応の吉野桧無垢材と熟練宮大工の意匠を結集した最高級オーダー建築プラン。（工期目安：約3〜6ヶ月）
         </p>
 
-        <!-- 事例 3 -->
         <div class="plan-case-block">
-          <h4 style="font-size: 1rem; color: var(--deep-sumi); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-            <span style="background: var(--primary-red); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 2px;">施工事例</span>
+          <h4 style="font-size: 0.95rem; color: var(--deep-sumi); margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+            <span style="background: var(--primary-red); color: #fff; font-size: 0.75rem; padding: 2px 6px; border-radius: 2px;">施工事例</span>
             港区 邸宅 本格木造・床暖房新築工事
           </h4>
-          <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
-            <div class="image-placeholder" style="flex: 1; min-width: 240px; height: 160px;">
-              <span>📷</span>【吉野桧床暖房 和室事例写真】
+          <div class="case-flex">
+            <div class="case-img-wrap">
+              <div class="image-placeholder" style="height: 150px;"><span>📷</span>【吉野桧床暖房 和室事例写真】</div>
             </div>
-            <div style="flex: 2; min-width: 260px; font-size: 0.9rem; color: var(--text-sub);">
+            <div class="case-desc-wrap">
               <p><strong>施工内容：</strong>吉野桧床暖房兼用フローリング施工、無垢化粧柱、坪庭造園</p>
-              <p style="margin-top: 6px;"><strong>規模：</strong>約45坪 ／ <strong>工期：</strong>4.5ヶ月</p>
-              <p style="margin-top: 6px;">「無垢の肌触りを一切損なわずに最新の床暖房を実現し、格式高い和の美意識を具現化しました。」</p>
+              <p style="margin-top: 4px;"><strong>規模：</strong>約45坪 ／ <strong>工期：</strong>4.5ヶ月</p>
+              <p style="margin-top: 4px;">「無垢の肌触りを一切損なわずに最新の床暖房を実現し、格式高い和の美意識を具現化しました。」</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div style="text-align: center; margin-top: 50px;">
-        <button class="form-control" style="width: auto; padding: 12px 36px; background: #fff; cursor: pointer;" onclick="navigateTo('page-home')">← トップページへ戻る</button>
+      <div style="text-align: center; margin-top: 40px;">
+        <button class="form-control" style="width: auto; padding: 12px 30px; background: #fff; cursor: pointer;" onclick="navigateTo('page-home')">← トップページへ戻る</button>
       </div>
     </div>
   </main>
@@ -1019,7 +1132,7 @@
       <div class="sec-title-wrap">
         <div class="sec-sub">SIMULATION</div>
         <h2 class="sec-title">概算お見積り計算</h2>
-        <p style="color: var(--text-sub); margin-top: 8px;">広さとご希望の桧材・施工プランを選択すると、概算費用が瞬時に算出されます</p>
+        <p style="color: var(--text-sub); margin-top: 6px; font-size: 0.9rem;">広さとご希望の桧材・施工プランを選択すると、概算費用が瞬時に算出されます</p>
       </div>
 
       <div class="washi-decorated" style="max-width: 860px; margin: 0 auto;">
@@ -1038,12 +1151,12 @@
               <input type="number" id="area-size" class="form-control" value="20" min="1" max="1000">
               <span class="unit" id="unit-indicator">坪</span>
             </div>
-            <p style="font-size: 0.8rem; color: var(--text-sub); margin-top: 4px;" id="unit-conversion-note">※ 1坪 ≒ 約3.3㎡</p>
+            <p style="font-size: 0.78rem; color: var(--text-sub); margin-top: 4px;" id="unit-conversion-note">※ 1坪 ≒ 約3.3㎡</p>
           </div>
         </div>
 
         <div class="calc-row">
-          <!-- 資材選択 -->
+          <!-- 資材選択（全11種類） -->
           <div>
             <label class="form-label" for="sim-material">1. 桧材の選定（全11種類）</label>
             <select id="sim-material" class="form-control">
@@ -1086,12 +1199,12 @@
 
         <!-- 計算結果表示 -->
         <div class="result-display">
-          <p style="font-size: 0.95rem; color: var(--text-sub); margin-bottom: 4px;">概算見積もり金額 (税込目安)</p>
+          <p style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 2px;">概算見積もり金額 (税込目安)</p>
           <div class="result-total" id="calc-total-display">¥0</div>
-          <p style="font-size: 0.82rem; color: #888; margin-top: 6px;">※（資材単価 ＋ 工賃単価）× 坪数（1万円単位で四捨五入）</p>
+          <p style="font-size: 0.8rem; color: #888; margin-top: 4px;">※（資材単価 ＋ 工賃単価）× 坪数（1万円単位で四捨五入）</p>
         </div>
 
-        <!-- 【追記】シミュレーションに関する注意書き枠 -->
+        <!-- 注意書き枠 -->
         <div class="caution-box">
           <strong>【お見積りシミュレーションに関するご留意事項】</strong>
           ・上記シミュレーションの計算結果は<strong>あくまで標準的な概算金額</strong>であり、実際の施工内容や仕様により金額は変動いたします。<br>
@@ -1100,12 +1213,12 @@
         </div>
 
         <!-- その他要望メモ -->
-        <div style="margin-bottom: 24px;">
+        <div style="margin-bottom: 20px;">
           <label class="form-label" for="calc-remarks">3. その他ご要望・条件メモ</label>
           <textarea id="calc-remarks" class="form-control" rows="4" placeholder="現状の築年数、現地調査の希望日時、床暖房の有無などをご自由に入力ください。"></textarea>
         </div>
 
-        <button type="button" class="form-control" style="background: var(--primary-red); color: #fff; font-weight: bold; border: none; cursor: pointer; padding: 16px; font-size: 1.05rem;" onclick="transferToContactPage()">
+        <button type="button" class="form-control" style="background: var(--primary-red); color: #fff; font-weight: bold; border: none; cursor: pointer; padding: 15px; font-size: 1rem;" onclick="transferToContactPage()">
           このシミュレーション内容を添えて問い合わせる →
         </button>
       </div>
@@ -1119,7 +1232,7 @@
       <div class="sec-title-wrap">
         <div class="sec-sub">CONTACT</div>
         <h2 class="sec-title">ご相談・お問い合わせ</h2>
-        <p style="color: var(--text-sub); margin-top: 8px;">現地調査（無料）やお見積りのご相談を承ります</p>
+        <p style="color: var(--text-sub); margin-top: 6px; font-size: 0.9rem;">現地調査（無料）やお見積りのご相談を承ります</p>
       </div>
 
       <div class="washi-decorated" style="max-width: 760px; margin: 0 auto;">
@@ -1144,20 +1257,19 @@
             </select>
           </div>
 
-          <!-- シミュレーション結果がすべて自動転記されるテキストエリア -->
           <div class="form-group">
             <label class="form-label">ご相談内容・シミュレーション条件</label>
             <textarea id="page-contact-remarks" class="form-control" rows="8" placeholder="ご希望の工期、ご予算、気になる点などをご自由にご記入ください。"></textarea>
           </div>
 
-          <button type="submit" class="form-control" style="background: var(--primary-red); color: #fff; font-weight: bold; border: none; cursor: pointer; padding: 16px; font-size: 1.05rem;">
+          <button type="submit" class="form-control" style="background: var(--primary-red); color: #fff; font-weight: bold; border: none; cursor: pointer; padding: 15px; font-size: 1rem;">
             送信する（※プロトタイプ用モック）
           </button>
         </form>
       </div>
 
-      <div style="text-align: center; margin-top: 50px;">
-        <button class="form-control" style="width: auto; padding: 12px 36px; background: #fff; cursor: pointer;" onclick="navigateTo('page-home')">← トップページへ戻る</button>
+      <div style="text-align: center; margin-top: 40px;">
+        <button class="form-control" style="width: auto; padding: 12px 30px; background: #fff; cursor: pointer;" onclick="navigateTo('page-home')">← トップページへ戻る</button>
       </div>
     </div>
   </main>
@@ -1166,11 +1278,11 @@
   <footer>
     <div class="container">
       <div class="contact-banner">
-        <div style="text-align: center; margin-bottom: 24px;">
-          <h3 style="font-size: 1.5rem; color: var(--primary-red); font-family: 'Shippori Mincho', serif;">現地調査無料</h3>
-          <p style="font-size: 0.85rem; color: var(--text-sub); margin-top: 4px;">※場所により費用が発生する場合がございます</p>
+        <div style="text-align: center; margin-bottom: 20px;">
+          <h3 style="font-size: 1.4rem; color: var(--primary-red); font-family: 'Shippori Mincho', serif;">現地調査無料</h3>
+          <p style="font-size: 0.82rem; color: var(--text-sub); margin-top: 3px;">※場所により費用が発生する場合がございます</p>
         </div>
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 24px; font-size: 0.95rem;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px; font-size: 0.9rem;">
           <div>
             <strong>📞 お電話</strong><br>
             050-1784-2312<br>
@@ -1188,7 +1300,7 @@
           </div>
         </div>
       </div>
-      <p style="text-align: center; font-size: 0.8rem; color: #999; margin: 30px 0;">&copy; 朝陽 ASAHI All Rights Reserved.</p>
+      <p style="text-align: center; font-size: 0.78rem; color: #999; margin: 24px 0;">&copy; 朝陽 ASAHI All Rights Reserved.</p>
     </div>
   </footer>
 
@@ -1259,7 +1371,6 @@
       const matPerTsubo = parseInt(simMaterial.value, 10) || 0;
       const laborPerTsubo = parseInt(simLabor.value, 10) || 0;
 
-      // 1万円単位で四捨五入
       const rawTotal = (matPerTsubo + laborPerTsubo) * tsubo;
       const total = Math.round(rawTotal / 10000) * 10000;
 
