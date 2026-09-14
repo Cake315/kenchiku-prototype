@@ -805,8 +805,8 @@
           <div class="mat-header">
             <span class="mat-name">吉野桧 一枚もの通常品フローリング</span>
             <div>
-              <span class="mat-price-tag">¥9,339 / ㎡ <span style="font-size:0.8rem; color:#666;">(税込)</span></span>
-              <span class="mat-price-tax-ex">［税別：¥8,490/㎡］</span>
+              <span class="mat-price-tag">¥8,030 / ㎡ <span style="font-size:0.8rem; color:#666;">(税込)</span></span>
+              <span class="mat-price-tax-ex">［税別：¥7,300/㎡］</span>
             </div>
           </div>
           
@@ -1052,14 +1052,14 @@
 
       <!-- 項目1 -->
       <div class="labor-block">
-        <h3 class="labor-title">項目1：フローリング張り（巾木60mm込み）</h3>
+        <h3 class="labor-title">項目1：フローリング張り（桧巾木60mm込み）</h3>
         
         <div class="labor-sub-item">
           <div class="labor-sub-name">
             <span>床撤去あり</span>
           </div>
           <div class="labor-sub-price">
-            ¥33,000 <span>/ 10㎡ (税抜 ¥30,000)</span>
+            ¥16,500 <span>/ 10㎡ (税抜 ¥15,000)</span>
           </div>
         </div>
 
@@ -1068,21 +1068,21 @@
             <span>床撤去なし（重ね張り施工）</span>
           </div>
           <div class="labor-sub-price">
-            ¥22,000 <span>/ 10㎡ (税抜 ¥20,000)</span>
+            ¥11,000 <span>/ 10㎡ (税抜 ¥10,000)</span>
           </div>
         </div>
       </div>
 
       <!-- 項目2 -->
       <div class="labor-block">
-        <h3 class="labor-title">項目2：床からフローリング変更（巾木60mm込み）</h3>
+        <h3 class="labor-title">項目2：畳からフローリング変更（桧巾木60mm込み）</h3>
         
         <div class="labor-sub-item">
           <div class="labor-sub-name">
-            <span>下地調整・フローリング新設</span>
+            <span>畳からフローリング変更</span>
           </div>
           <div class="labor-sub-price">
-            ¥33,000 <span>/ 10㎡ (税抜 ¥30,000)</span>
+            ¥13,750 <span>/ 10㎡ (税抜 ¥12,500)</span>
           </div>
         </div>
       </div>
@@ -1127,7 +1127,7 @@
             <label class="form-label" for="sim-material">2. 資材の選定（全11種類）</label>
             <select id="sim-material" class="form-control">
               <optgroup label="【1. 吉野桧 床用フローリング】">
-                <option value="9339" selected>吉野桧 一枚もの通常品フローリング (¥9,339/㎡)</option>
+                <option value="8030" selected>吉野桧 一枚もの通常品フローリング (¥8,030/㎡)</option>
                 <option value="11550">吉野桧 一枚もの上小節フローリング (¥11,550/㎡)</option>
                 <option value="18480">吉野桧 一枚もの無節フローリング (¥18,480/㎡)</option>
               </optgroup>
@@ -1150,11 +1150,11 @@
 
           <!-- 3. 工賃プラン -->
           <div>
-            <label class="form-label" for="sim-labor">3. 工賃プランの選定（巾木60mm込・税込）</label>
+            <label class="form-label" for="sim-labor">3. 工賃プランの選定（桧巾木60mm込・税込）</label>
             <select id="sim-labor" class="form-control">
-              <option value="2200">フローリング張り（床撤去なし） (¥2,200/㎡)</option>
-              <option value="3300" selected>フローリング張り（床撤去あり） (¥3,300/㎡)</option>
-              <option value="3300">床からフローリング変更 (¥3,300/㎡)</option>
+              <option value="1100">フローリング張り（床撤去なし） (¥1,100/㎡)</option>
+              <option value="1650" selected>フローリング張り（床撤去あり） (¥1,650/㎡)</option>
+              <option value="1375">畳からフローリング変更 (¥1,375/㎡)</option>
             </select>
           </div>
         </div>
@@ -1217,37 +1217,41 @@
         </div>
 
         <!-- フォーム -->
-        <form onsubmit="handleFormSubmit(event)">
-          <div class="form-group">
-            <label class="form-label">お名前 <span style="color: var(--primary-red);">*</span></label>
-            <input type="text" class="form-control" required placeholder="例：山田 太郎">
-          </div>
+        <form action="https://formsubmit.co/asahi.20241122@gmail.com" method="POST">
+  <!-- FormSubmit 設定用隠しフィールド -->
+  <input type="hidden" name="_subject" value="【朝陽】ウェブサイトからのお問い合わせ">
+  <input type="hidden" name="_captcha" value="false">
 
-          <div class="form-group">
-            <label class="form-label">ご連絡先 (お電話番号またはメール) <span style="color: var(--primary-red);">*</span></label>
-            <input type="text" class="form-control" required placeholder="例：090-1234-5678 / sample@mail.com">
-          </div>
+  <div class="form-group">
+    <label class="form-label">お名前 <span style="color: var(--primary-red);">*</span></label>
+    <input type="text" name="お名前" class="form-control" required placeholder="例：山田 太郎">
+  </div>
 
-          <div class="form-group">
-            <label class="form-label">ご相談種別</label>
-            <select class="form-control">
-              <option>現地調査の申し込み（無料）</option>
-              <option>壁紙・床リフォームのご相談</option>
-              <option>吉野桧フローリング・パネリングについて</option>
-              <option>概算見積りの詳細相談</option>
-              <option>その他建築工事一式について</option>
-            </select>
-          </div>
+  <div class="form-group">
+    <label class="form-label">ご連絡先 (お電話番号またはメール) <span style="color: var(--primary-red);">*</span></label>
+    <input type="text" name="ご連絡先" class="form-control" required placeholder="例：090-1234-5678 / sample@mail.com">
+  </div>
 
-          <div class="form-group">
-            <label class="form-label">ご相談内容・シミュレーション条件</label>
-            <textarea id="page-contact-remarks" class="form-control" rows="8" placeholder="ご希望の工期、ご予算、気になる点などをご自由にご記入ください。"></textarea>
-          </div>
+  <div class="form-group">
+    <label class="form-label">ご相談種別</label>
+    <select name="ご相談種別" class="form-control">
+      <option value="現地調査の申し込み（無料）">現地調査の申し込み（無料）</option>
+      <option value="壁紙・床リフォームのご相談">壁紙・床リフォームのご相談</option>
+      <option value="吉野桧フローリング・パネリングについて">吉野桧フローリング・パネリングについて</option>
+      <option value="概算見積りの詳細相談">概算見積りの詳細相談</option>
+      <option value="その他建築工事一式について">その他建築工事一式について</option>
+    </select>
+  </div>
 
-          <button type="submit" class="form-control" style="background: var(--primary-red); color: #fff; font-weight: bold; border: none; cursor: pointer; padding: 15px; font-size: 1rem;">
-            送信する（※プロトタイプ用モック）
-          </button>
-        </form>
+  <div class="form-group">
+    <label class="form-label">ご相談内容・シミュレーション条件</label>
+    <textarea id="page-contact-remarks" name="ご相談内容" class="form-control" rows="8" placeholder="ご希望の工期、ご予算、気になる点などをご自由にご記入ください。"></textarea>
+  </div>
+
+  <button type="submit" class="form-control" style="background: var(--primary-red); color: #fff; font-weight: bold; border: none; cursor: pointer; padding: 15px; font-size: 1rem;">
+    送信する
+  </button>
+</form>
       </div>
 
       <div style="text-align: center; margin-top: 40px;">
