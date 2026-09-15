@@ -728,26 +728,6 @@
         </div>
       </div>
 
-      <!-- ポスター調 特徴バナー（壁紙・空間リフォーム） -->
-      <div class="poster-feature-banner">
-        <span class="poster-feature-tag">壁紙・床リフォーム 承ります</span>
-        <p style="font-size: 0.95rem; color: var(--text-sub);">
-          お部屋の雰囲気を新しく、快適な空間に。住まいの格調を高めるご提案。
-        </p>
-        <div class="poster-grid-2">
-          <div class="poster-price-card">
-            <h4>壁紙一面のみ</h4>
-            <div class="poster-price-num">一律 30,000円 <span style="font-size: 0.8rem; color: #777;">(税別 27,273円)</span></div>
-            <p style="font-size: 0.85rem; color: var(--text-sub); margin-top: 4px;">アクセントクロスで部屋の印象を一新</p>
-          </div>
-          <div class="poster-price-card">
-            <h4>全面（天井込み）</h4>
-            <div class="poster-price-num">1平米につき 2,200円 <span style="font-size: 0.8rem; color: #777;">(税別 2,000円)</span></div>
-            <p style="font-size: 0.85rem; color: var(--text-sub); margin-top: 4px;">壁紙材料費：1平米あたり660円〜(税別600円)</p>
-          </div>
-        </div>
-      </div>
-
       <!-- 主要案内カード（お品書き） -->
       <div class="sec-title-wrap">
         <div class="sec-sub">SERVICES</div>
@@ -1090,7 +1070,7 @@
       <!-- 注意書き -->
       <div class="labor-notes-box">
         <strong style="color: var(--deep-sumi); display: block; margin-bottom: 6px; font-size: 0.95rem;">【工賃に関するご案内事項】</strong>
-        ・<strong>廃棄処分費および諸経費は別途</strong>いただきます。<br>
+        ・<strong>産業処分費および諸経費は別途</strong>いただきます。<br>
         ・諸経費につきましては、<strong>現場状況により10%〜20%ほど</strong>いただきます。あらかじめご了承ください。
       </div>
 
@@ -1171,7 +1151,7 @@
           <strong>【お見積りシミュレーションに関するご留意事項】</strong>
           ・上記シミュレーションの計算結果は<strong>あくまで標準的な概算金額</strong>であり、実際の施工内容や仕様により金額は変動いたします。<br>
           ・工賃には<strong>廃棄処分費・諸経費（現場状況により10%〜20%）が別途加算</strong>されます。<br>
-          ・建物の現在の状態、下地処理の要否、搬入経路・立地条件、および現場の環境によって工期および最終的な金額が変わる可能性がございます。<br>
+          ・建物の現在の状態、下地処理の要否によって工期および最終的な金額が変わる可能性がございます。<br>
           ・正確な工期・お見積りにつきましては、現地調査（無料）にて詳細を拝見した上でご案内させていただきます。
         </div>
 
@@ -1232,16 +1212,14 @@
     <input type="text" name="ご連絡先" class="form-control" required placeholder="例：090-1234-5678 / sample@mail.com">
   </div>
 
-  <div class="form-group">
-    <label class="form-label">ご相談種別</label>
-    <select name="ご相談種別" class="form-control">
-      <option value="現地調査の申し込み（無料）">現地調査の申し込み（無料）</option>
-      <option value="壁紙・床リフォームのご相談">壁紙・床リフォームのご相談</option>
-      <option value="吉野桧フローリング・パネリングについて">吉野桧フローリング・パネリングについて</option>
-      <option value="概算見積りの詳細相談">概算見積りの詳細相談</option>
-      <option value="その他建築工事一式について">その他建築工事一式について</option>
-    </select>
-  </div>
+	<div class="form-group">
+            <label class="form-label">ご相談種別</label>
+            <select name="ご相談種別" class="form-control">
+              <option value="現地調査の申し込み">現地調査の申し込み</option>
+              <option value="工事についてのご相談">工事についてのご相談</option>
+              <option value="その他">その他</option>
+            </select>
+          </div>
 
   <div class="form-group">
     <label class="form-label">ご相談内容・シミュレーション条件</label>
@@ -1273,7 +1251,7 @@
           <div>
             <strong>📞 お電話</strong><br>
             050-1784-2312<br>
-            <span style="font-size: 0.8rem; color: var(--text-sub);">直通: 090-5806-5361 (SMS可)</span>
+            <span style="font-size: 0.8rem; color: var(--text-sub);">直通: <a href="tel:09012345678">090-1234-5678</a> (SMS可)</span>
           </div>
 
           <div>
@@ -1284,8 +1262,7 @@
 
           <div>
             <strong>✉️ メール</strong><br>
-            asahi.20241122@gmail.com
-          </div>
+<a href="mailto:asahi.20241122@gmail.com">asahi.20241122@gmail.com</a>          </div>
 
           <!-- LINE QRコード表示エリア -->
           <div class="qr-container">
