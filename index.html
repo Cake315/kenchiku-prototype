@@ -42,12 +42,42 @@
 
 .hero-zen {
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* 横並びに変更 */
   align-items: center;
-  text-align: center;
-  gap: 30px;
+  justify-content: space-between;
+  gap: 36px;
+  background: #fff;
+  border: 1px solid var(--border-wood);
+  padding: 32px 36px;
+  margin-bottom: 36px;
+  border-radius: 6px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.03);
 }
 
+.hero-horizontal-copy {
+  flex: 1.1;
+  text-align: left; /* 左揃えにして落ち着きを持たせる */
+}
+
+.hero-horizontal-copy h2 {
+  font-size: 2rem;
+  color: var(--primary-red) !important;
+  margin: 10px 0 14px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.hero-text {
+  font-size: 0.95rem;
+  color: var(--text-sub);
+  line-height: 2;
+}
+
+.hero-img-box {
+  flex: 1.2;
+  width: 100%;
+  line-height: 0;
+}
     h1, h2, h3, h4, .mincho {
       font-family: 'Shippori Mincho', serif;
       font-weight: 700;
@@ -256,14 +286,14 @@
       line-height: 0;
       display: flex;
     }
-    .hero-main-photo {
+  .hero-main-photo {
   width: 100%;
-  max-width: 450px; /* ★ここを調整します（例: 400px や 350px などにすると小さくなります） */
-  height: 100%;     /* ★100%から「auto」に変えると、画像の縦横比を保ったまま綺麗に縮みます */
+  max-width: 100%; /* 横幅いっぱいにフィットさせる */
+  height: 340px;   /* 写真の高さを固定して端正に整える */
   object-fit: cover;
-  object-position: center;
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
   display: block;
-  margin: 0 auto;   /* ★画像自体を中央寄せにする場合に入れます */
   transition: transform 0.4s ease;
 }
 
@@ -317,10 +347,16 @@
 
     /* グリッドカード（お品書き） */
     .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2列固定 */
+  gap: 24px;
+}
+@media (max-width: 768px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
     .washi-card {
       background: #fff;
       border: 1px solid var(--border-wood);
@@ -652,13 +688,18 @@
         font-size: 1.6rem;
         padding: 0 8px;
       }
-      .hero-zen {
-        padding: 14px 14px 10px;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-items: stretch;
-        gap: 12px;
-        margin-bottom: 22px;
+     .hero-zen {
+        padding: 20px 16px;
+        flex-direction: column; /* スマホでは縦並びに戻す */
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 24px;
+      }
+      .hero-horizontal-copy {
+        text-align: center;
+      }
+      .hero-main-photo {
+        height: 220px;
       }
       .hero-vertical-copy {
         writing-mode: horizontal-tb;
@@ -752,11 +793,12 @@
       <!-- 右上 三点リーダーメニュー -->
       <div class="menu-wrap">
         <button class="menu-trigger" id="menuBtn" title="目録">⋮</button>
-        <nav class="menu-dropdown" id="menuDropdown">
+       <nav class="menu-dropdown" id="menuDropdown">
           <a href="javascript:void(0)" onclick="navigateTo('page-home')">御挨拶（トップ）</a>
-          <a href="javascript:void(0)" onclick="navigateTo('page-materials')">各種資材（木材一覧）</a>
+          <a href="javascript:void(0)" onclick="navigateTo('page-materials')">各種資材（木材・壁紙）</a>
           <a href="javascript:void(0)" onclick="navigateTo('page-labor')">工賃プラン</a>
           <a href="javascript:void(0)" onclick="navigateTo('page-estimate')">概算見積シミュレーション</a>
+          <a href="javascript:void(0)" onclick="navigateTo('page-recruit')">採用情報（求人募集）</a>
           <a href="javascript:void(0)" onclick="navigateTo('page-contact')">お問い合わせ・LINE</a>
         </nav>
       </div>
@@ -787,7 +829,8 @@
         <div class="sec-sub">SERVICES</div>
         <h2 class="sec-title">お品書き</h2>
       </div>
-      <div class="grid-3">
+<div class="grid-3">
+        <!-- 1枚目：資材 -->
         <div class="washi-card" onclick="navigateTo('page-materials')" style="cursor: pointer;">
           <img src="image/home/sizai.jpg" alt="厳選 桧建材一覧" class="card-thumb-img">
           <div>
@@ -797,6 +840,7 @@
           <span style="color: var(--primary-red); font-weight: bold; font-size: 0.88rem; margin-top: 10px; display: inline-block;">資材詳細を見る →</span>
         </div>
 
+        <!-- 2枚目：工賃 -->
         <div class="washi-card" onclick="navigateTo('page-labor')" style="cursor: pointer;">
           <img src="image/home/kochin.jpg" alt="基本工賃プラン 施工風景" class="card-thumb-img">
           <div>
@@ -806,6 +850,7 @@
           <span style="color: var(--primary-red); font-weight: bold; font-size: 0.88rem; margin-top: 10px; display: inline-block;">工賃一覧を見る →</span>
         </div>
 
+        <!-- 3枚目：概算お見積り計算 -->
         <div class="washi-card" onclick="navigateTo('page-estimate')" style="cursor: pointer;">
           <img src="image/home/mitsumori.jpg" alt="概算お見積り計算 施工イメージ" class="card-thumb-img">
           <div>
@@ -814,9 +859,19 @@
           </div>
           <span style="color: var(--primary-red); font-weight: bold; font-size: 0.88rem; margin-top: 10px; display: inline-block;">シミュレーションする →</span>
         </div>
-      </div>
 
-    </div>
+        <!-- 4枚目：採用情報（求人募集） -->
+        <div class="washi-card" onclick="navigateTo('page-recruit')" style="cursor: pointer;">
+          <img src="image/home/saiyou.jpg" alt="朝陽 採用情報 募集案内" class="card-thumb-img" onerror="this.src='image/home/hero.jpg'">
+          <div>
+            <h3 style="font-size: 1.12rem;">採用情報（求人募集）</h3>
+            <p style="font-size: 0.85rem; color: var(--text-sub); margin-top: 6px;">
+              内外装・外構・建築全般の現場スタッフを募集中。未経験者歓迎・研修期間あり。
+            </p>
+          </div>
+          <span style="color: var(--primary-red); font-weight: bold; font-size: 0.88rem; margin-top: 10px; display: inline-block;">募集要項を見る →</span>
+        </div>
+      </div> <!-- ← ★4枚すべてのカードを囲んでから閉じる -->
   </main>
 
   <!-- ================= 画面2: 資材一覧ページ ================= -->
@@ -1082,6 +1137,53 @@
         </div>
       </section>
 
+<!-- カテゴリ5: 壁紙（クロス）資材 -->
+      <section class="material-category">
+        <div class="category-header">
+          <h3 class="category-title">5. 壁紙（クロス）資材</h3>
+          <span class="category-note">お部屋の雰囲気を新しく、快適な空間に</span>
+        </div>
+        <div style="background: #faf8f4; border: 1px solid #ede4d5; border-radius: 6px; padding: 16px 20px; margin-bottom: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 10px; border-bottom: 1px dashed #e8dfd3; padding-bottom: 10px; margin-bottom: 10px;">
+            <span style="font-size: 1.18rem; font-weight: 700; color: var(--deep-sumi);">標準壁紙（クロス）各種</span>
+            <div>
+              <span class="mat-price-tag">¥660 / ㎡ <span style="font-size:0.8rem; color:#666;">(税込)</span></span>
+              <span class="mat-price-tax-ex">［税別：¥600/㎡］</span>
+            </div>
+          </div>
+          <p class="mat-desc">
+            お部屋の用途やお好みのテイストに合わせてお選びいただける人気定番クロスです。下記の4品番のほか、お客様の様々なご要望や空間イメージに合わせて多彩な壁紙をご提案・ご用意いたします。
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+          <!-- 壁紙1: SLP-345 -->
+          <div style="background: #fff; border: 1px solid #ede4d5; border-radius: 4px; padding: 12px; text-align: center;">
+            <img src="image/sizai/SLP-345.jpg" alt="壁紙品番 SLP-345" class="mat-thumb-img" style="height: 120px;" onerror="this.style.background='#f0ebe0'">
+            <div style="font-weight: 700; color: var(--deep-sumi); margin-top: 6px;">品番: SLP-345</div>
+            <div style="font-size: 0.8rem; color: var(--text-sub);">織物調／スタンダードホワイト</div>
+          </div>
+          <!-- 壁紙2: SP-2520 -->
+          <div style="background: #fff; border: 1px solid #ede4d5; border-radius: 4px; padding: 12px; text-align: center;">
+            <img src="image/sizai/SP-2520.jpg" alt="壁紙品番 SP-2520" class="mat-thumb-img" style="height: 120px;" onerror="this.style.background='#f0ebe0'">
+            <div style="font-weight: 700; color: var(--deep-sumi); margin-top: 6px;">品番: SP-2520</div>
+            <div style="font-size: 0.8rem; color: var(--text-sub);">石目・塗り壁調／クリーン</div>
+          </div>
+          <!-- 壁紙3: SP-2569 -->
+          <div style="background: #fff; border: 1px solid #ede4d5; border-radius: 4px; padding: 12px; text-align: center;">
+            <img src="image/sizai/SP-2569.jpg" alt="壁紙品番 SP-2569" class="mat-thumb-img" style="height: 120px;" onerror="this.style.background='#f0ebe0'">
+            <div style="font-weight: 700; color: var(--deep-sumi); margin-top: 6px;">品番: SP-2569</div>
+            <div style="font-size: 0.8rem; color: var(--text-sub);">和モダン・テクスチャ調</div>
+          </div>
+          <!-- 壁紙4: SP-2605 -->
+          <div style="background: #fff; border: 1px solid #ede4d5; border-radius: 4px; padding: 12px; text-align: center;">
+            <img src="image/sizai/SP-2605.jpg" alt="壁紙品番 SP-2605" class="mat-thumb-img" style="height: 120px;" onerror="this.style.background='#f0ebe0'">
+            <div style="font-weight: 700; color: var(--deep-sumi); margin-top: 6px;">品番: SP-2605</div>
+            <div style="font-size: 0.8rem; color: var(--text-sub);">木目・ナチュラルアクセント調</div>
+          </div>
+        </div>
+      </section>
+
       <div style="text-align: center; margin-top: 40px;">
         <button class="form-control" style="width: auto; padding: 12px 30px; background: #fff; cursor: pointer;" onclick="navigateTo('page-home')">← トップページへ戻る</button>
       </div>
@@ -1129,6 +1231,27 @@
           </div>
           <div class="labor-sub-price">
             ¥13,750 <span>/ ㎡ (税抜 ¥12,500)</span>
+          </div>
+        </div>
+      </div>
+
+<!-- 項目3: 壁紙リフォーム工賃 -->
+      <div class="labor-block">
+        <h3 class="labor-title">項目3：壁紙（クロス）リフォーム工賃</h3>
+        <div class="labor-sub-item">
+          <div class="labor-sub-name">
+            <span>壁紙一面（15平米以内・アクセント壁など）</span>
+          </div>
+          <div class="labor-sub-price">
+            一律 ¥3,300 <span>(税抜 ¥3,000)</span>
+          </div>
+        </div>
+        <div class="labor-sub-item">
+          <div class="labor-sub-name">
+            <span>通常壁紙張り（一平米あたり／特殊壁紙を除く）</span>
+          </div>
+          <div class="labor-sub-price">
+            ¥2,200 <span>/ ㎡ (税抜 ¥2,000)</span>
           </div>
         </div>
       </div>
@@ -1190,6 +1313,9 @@
         <option value="11880">国産桧 一枚もの上小節フローリング（15×105×1920mm）- 税込 ¥11,880 / 税抜 ¥10,800/㎡</option>
         <option value="14190">国産桧 一枚もの無節フローリング（15×105×1920mm）- 税込 ¥14,190 / 税抜 ¥12,900/㎡</option>
     </optgroup>
+    <optgroup label="【5. 壁紙（クロス）資材】">
+        <option value="660">標準壁紙クロス（SLP-345 / SP各品番等）- 税込 ¥660 / ㎡</option>
+    </optgroup>
 </select>
 </div>
 
@@ -1200,6 +1326,7 @@
     <option value="11000">フローリング張り（床撤去なし）（税込 ¥11,000 / 税抜 ¥10,000/㎡）</option>
     <option value="16500" selected>フローリング張り（床撤去あり）（税込 ¥16,500 / 税抜 ¥15,000/㎡）</option>
     <option value="13750">畳からフローリング変更（税込 ¥13,750 / 税抜 ¥12,500/㎡）</option>
+    <option value="2200">壁紙リフォーム施工（通常）（税込 ¥2,200 / ㎡）</option>
 </select>
 </div>
 
@@ -1289,6 +1416,7 @@
             <select name="ご相談種別" class="form-control">
               <option value="現地調査の申し込み">現地調査の申し込み</option>
               <option value="工事についてのご相談">工事についてのご相談</option>
+	      <option value="採用・求人への応募">採用・求人への応募</option>
               <option value="その他">その他</option>
             </select>
           </div>
@@ -1304,6 +1432,91 @@
         </form>
 
       </div> <!-- お問い合わせ全体のコンテナ閉じ -->
+
+      <div style="text-align: center; margin-top: 40px;">
+        <button class="form-control" style="width: auto; padding: 12px 30px; background: #fff; cursor: pointer;" onclick="navigateTo('page-home')">← トップページへ戻る</button>
+      </div>
+    </div>
+  </main>
+
+<!-- ================= 画面: 採用情報（求人募集） ================= -->
+  <main id="page-recruit" class="page-section">
+    <div class="container">
+      <div class="sec-title-wrap">
+        <div class="sec-sub">RECRUIT</div>
+        <h2 class="sec-title">採用情報・求人募集</h2>
+        <p style="color: var(--text-sub); margin-top: 6px; font-size: 0.9rem;">
+          内外装・建築全般の現場を共に創る仲間を募集しています
+        </p>
+      </div>
+
+      <div class="washi-decorated" style="max-width: 860px; margin: 0 auto;">
+        <div style="background: #faf6f0; border-left: 4px solid var(--primary-red); padding: 18px 20px; border-radius: 4px; margin-bottom: 28px;">
+          <h3 style="font-size: 1.25rem; color: var(--deep-sumi); margin-bottom: 8px;">未経験者大歓迎！ 丁寧な研修期間あり</h3>
+          <p style="font-size: 0.92rem; color: var(--charcoal); line-height: 1.8;">
+            道具の使い方から現場の安全管理まで、熟練の職人が一から丁寧に指導いたします。<br>
+            やる気と人柄を重視した採用を行っておりますので、建築・リフォーム業界が初めての方も安心してご応募ください。
+          </p>
+        </div>
+
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 28px; font-size: 0.95rem;">
+          <tbody>
+            <tr style="border-bottom: 1px solid #e5dccf;">
+              <th style="width: 25%; padding: 16px 14px; text-align: left; background: #faf8f4; color: var(--deep-sumi); font-weight: 700;">募集職種</th>
+              <td style="padding: 16px 14px;">現場施工スタッフ（アルバイト ／ 業務委託）</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e5dccf;">
+              <th style="padding: 16px 14px; text-align: left; background: #faf8f4; color: var(--deep-sumi); font-weight: 700;">仕事内容</th>
+              <td style="padding: 16px 14px;">内外装リフォーム、クロス（壁紙）施工、床材張り、外構・エクステリア工事、その他建築業全般</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e5dccf;">
+              <th style="padding: 16px 14px; text-align: left; background: #faf8f4; color: var(--deep-sumi); font-weight: 700;">給与</th>
+              <td style="padding: 16px 14px;">
+                <strong style="color: var(--primary-red); font-size: 1.25rem;">日給 10,000円〜</strong><br>
+                <span style="display: inline-block; margin-top: 4px; color: var(--text-sub);">※経験者優遇：<strong>日給 12,000円〜</strong>（スキル・能力を考慮の上決定）</span><br>
+                <span style="font-size: 0.85rem; color: #888;">※未経験者は研修期間あり</span>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e5dccf;">
+              <th style="padding: 16px 14px; text-align: left; background: #faf8f4; color: var(--deep-sumi); font-weight: 700;">勤務地</th>
+              <td style="padding: 16px 14px;">関東圏内の各施工現場（※地方出張あり）</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e5dccf;">
+              <th style="padding: 16px 14px; text-align: left; background: #faf8f4; color: var(--deep-sumi); font-weight: 700;">勤務時間</th>
+              <td style="padding: 16px 14px;">9:00〜18:00（実働8時間・休憩あり／※残業あり）</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e5dccf;">
+              <th style="padding: 16px 14px; text-align: left; background: #faf8f4; color: var(--deep-sumi); font-weight: 700;">休日・休暇</th>
+              <td style="padding: 16px 14px;">申告制（希望の働き方に合わせて柔軟に調整可能です）</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e5dccf;">
+              <th style="padding: 16px 14px; text-align: left; background: #faf8f4; color: var(--deep-sumi); font-weight: 700;">待遇・福利厚生</th>
+              <td style="padding: 16px 14px;">交通費全額支給、昇給あり</td>
+            </tr>
+            <tr>
+              <th style="padding: 16px 14px; text-align: left; background: #faf8f4; color: var(--deep-sumi); font-weight: 700;">応募必要書類</th>
+              <td style="padding: 16px 14px;">身分証明書</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- 応募誘導枠 -->
+        <div style="text-align: center; background: #fdfcf9; border: 1px solid #dfd2c0; border-radius: 6px; padding: 24px;">
+          <h4 style="font-size: 1.15rem; color: var(--deep-sumi); margin-bottom: 8px;">【ご応募・面接のお問い合わせ】</h4>
+          <p style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 16px;">
+            LINEまたはお電話（SMS）、お問い合わせフォームより「求人応募の件で」とお気軽にご連絡ください。
+          </p>
+          <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+            <a href="https://lin.ee/8wQlimo" target="_blank" rel="noopener noreferrer" style="background: #06c755; color: #fff; padding: 12px 24px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 0.95rem;">
+              LINEで応募・質問する
+            </a>
+            <button onclick="navigateTo('page-contact')" class="form-control" style="width: auto; background: var(--primary-red); color: #fff; font-weight: bold; border: none; cursor: pointer; padding: 12px 24px; border-radius: 30px;">
+              フォームから応募する
+            </a>
+          </div>
+        </div>
+
+      </div>
 
       <div style="text-align: center; margin-top: 40px;">
         <button class="form-control" style="width: auto; padding: 12px 30px; background: #fff; cursor: pointer;" onclick="navigateTo('page-home')">← トップページへ戻る</button>
